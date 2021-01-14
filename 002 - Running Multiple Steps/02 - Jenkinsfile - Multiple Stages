@@ -14,7 +14,7 @@ pipeline {
 		}
     		stage('test2') {
 			steps {
-				sh "cat test | grep 2019"
+				sh "cat test | grep 2021"
 			}
 		}
     	}

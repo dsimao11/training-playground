@@ -1,18 +1,19 @@
 pipeline {
-    agent { 
+	agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
-    stages {
-    	stage('build') {
-		steps {
-			saveAndPrintDate("date1")
-			sh 'sleep 10s'
-			saveAndPrintDate("date2")
+    	stages {
+    		stage('build') {
+			steps {
+				sh 'echo debug log'
+				saveAndPrintDate("date1")
+				sh 'sleep 10s'
+				saveAndPrintDate("date2")
+			}
 		}
-	}
-    }
+    	}
 }
 
 def saveAndPrintDate(filename = '') {

@@ -18,5 +18,5 @@ pipeline {
 
 def saveAndPrintDate(filename = '') {
 	sh 'date > $filename'
-	sh 'cat data1'
+	sh 'cat $filename'
 }

@@ -1,9 +1,25 @@
 pipeline {
-    agent { 
+	agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
-    stages {
-    }
+	parameters {
+		choice(name: 'TOEXECUTE', choices: ['build', 'test'], description: 'ToExecute?')
+    	}
+	stages {
+        	stage('build') {
+			when {
+				environment name: 'TOEXECUTE', value: 'build'
+			}
+			echo 'executing the build stage (from groovy)'
+            }
+       		 }
+		 stage('test') {
+			when {
+				environment name: 'TOEXECUTE', value: 'test'
+			}
+			sh "echo 'executing the build stage'"
+       		 }
+    	}
 }

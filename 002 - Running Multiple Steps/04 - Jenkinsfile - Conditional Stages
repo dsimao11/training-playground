@@ -15,7 +15,6 @@ pipeline {
 			steps {
 				echo 'executing the build stage (from groovy)'
 			}
-            }
        		 }
 		 stage('test') {
 			when {

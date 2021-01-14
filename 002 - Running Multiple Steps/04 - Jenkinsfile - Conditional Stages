@@ -20,7 +20,7 @@ pipeline {
 			when {
 				environment name: 'TOEXECUTE', value: 'test'
 			}
-			step {
+			steps {
 				sh "echo 'executing the build stage'"
 			}
        		 }

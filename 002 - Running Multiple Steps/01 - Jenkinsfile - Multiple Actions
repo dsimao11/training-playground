@@ -5,5 +5,17 @@ pipeline {
 		}
 	}
     stages {
+    	stage('build') {
+		steps {
+			saveAndPrintDate("date1")
+			sh 'sleep 10s'
+			saveAndPrintDate("date2")
+		}
+	}
     }
+}
+
+def saveAndPrintDate(filename = '') {
+	sh 'date > $filename'
+	sh 'cat data1'
 }

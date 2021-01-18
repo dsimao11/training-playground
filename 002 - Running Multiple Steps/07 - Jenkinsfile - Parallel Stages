@@ -8,8 +8,7 @@ pipeline {
 			}
 		}
 		stage('test') {
-			steps {
-			}
+
 		}
 	}
 }

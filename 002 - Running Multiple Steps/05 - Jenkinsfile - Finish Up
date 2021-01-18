@@ -1,5 +1,5 @@
 pipeline {
-    agent { 
+	agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
@@ -12,9 +12,9 @@ pipeline {
         }
     }
 	post { 
-        always { 
-            echo 'Always!'
-        }
+		always { 
+		    echo 'Always!'
+		}
 		failure {
 			echo 'Fail!'
 		}

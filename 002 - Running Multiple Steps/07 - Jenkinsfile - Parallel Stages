@@ -1,16 +1,15 @@
 pipeline {
-    agent none
-    stages {
-    	stage('build') {
-
-		steps {
-			sh "mvn --version"
-			sh "npm --version"
+	agent none
+    	stages {
+    		stage('build') {
+			steps {
+				sh "mvn --version"
+				sh "npm --version"
+			}
 		}
-	}
 		stage('test') {
 			steps {
 			}
-}		}
+		}
 	}
 }

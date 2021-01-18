@@ -3,13 +3,14 @@ pipeline {
     stages {
     	stage('build') {
 
-			steps {
-				sh "mvn --version"
-				sh "npm --version"
-			}
+		steps {
+			sh "mvn --version"
+			sh "npm --version"
 		}
+	}
 		stage('test') {
-
-		}
+			steps {
+			}
+}		}
 	}
 }

@@ -16,10 +16,10 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                	def buildConfigs = readJSON text: "$JSONVAR"
+                	def buildConfigs = readJSON text : "$JSONVAR"
                 	buildConfigs.each{ buildConfig ->
                 		stage(buildConfig.name) {
-					sh "echo '$buildConfig.command"
+					sh "echo '$buildConfig.name' && $buildConfig.command"
 				}
 			}
                 }

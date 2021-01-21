@@ -4,11 +4,21 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	environment {
+		JSONVAR = 
+		'''
+			[
+				{name: "Java", command: "echo 'somos os maiores},
+				{name: "Node", command: "echo 'somos os maiores}
+			]
+		'''
+		
+	}
     stages {
         stage('build') {
             steps {
                 script {
-                	def buildConfigs = []
+                	def buildConfigs = readJSON text: "$JSONVAR"
                 	buildConfigs.each{ buildConfig ->
                 		sh "echo '$buildConfig.name' && $buildConfig.command"
 					}

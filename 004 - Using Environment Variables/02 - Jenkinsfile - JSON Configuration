@@ -5,14 +5,12 @@ pipeline {
 		}
 	}
 	environment {
-		JSONVAR = 
+		JSONVAR = '''
+		[
+			{name: "Java", command: "echo 'Somos os Maiores'"},
+			{name: "Node", command: "echo 'So que nao'"}
+		]
 		'''
-			[
-				{name: "Java", command: "echo 'somos os maiores},
-				{name: "Node", command: "echo 'somos os maiores}
-			]
-		'''
-		
 	}
     stages {
         stage('build') {

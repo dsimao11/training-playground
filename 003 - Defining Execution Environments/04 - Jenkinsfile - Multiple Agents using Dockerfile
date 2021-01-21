@@ -1,6 +1,27 @@
 pipeline {
-    agent { 
-	}
+    agent none
     stages {
-    }
+    	stage('buildMaven') {
+			agent {
+				dockerfile {
+					dir '003 - Defining Execution Environments'
+					filename '04 - Dockerfile - Multiple Agents using Dockerfile'
+				}
+			}
+			steps {
+				sh "npm --version"
+			}
+		}
+		stage('buildNpm') {
+			agent {
+				dockerfile {
+					dir '003 - Defining Execution Environments'
+					filename '04 - Dockerfile - Multiple Agents using Dockerfile - mvn'
+				}
+			}
+			steps {
+				sh "mvn --version"
+			}
+		}
+	}
 }

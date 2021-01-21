@@ -5,7 +5,7 @@ pipeline {
 		}
 	}
 	environment { 
-        NOTIFICATION_EMAIL = 'clang'
+        NOTIFICATION_EMAIL = 'Hello world!'
     }
     stages {
         stage('build') {

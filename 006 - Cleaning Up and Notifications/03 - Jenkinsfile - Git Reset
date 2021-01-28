@@ -1,15 +1,20 @@
 pipeline {
-	agent { 
-		dockerfile {
-			dir '003 - Defining Execution Environments'
-			filename '04 - Dockerfile - Multiple Agents using Dockerfile'
-		}
-	}
-	stages {
-		stage('build') {
-			steps {
-				sh ""
-			}
-		}
-	}
+    agent { 
+        dockerfile { 
+             	filename '03 - Dockerfile- Git Reset'
+       		dir '006 - Cleaning Up and Notifications' 
+        }
+    }
+    stages {
+        stage('build') {
+            steps {
+            sh "ls -lta"
+        sh "git clean -fd"
+        sh "ls -lta"
+                sh "date > date.txt"
+        sh "ls -lta"
+        
+            }
+        }
+    }
 }

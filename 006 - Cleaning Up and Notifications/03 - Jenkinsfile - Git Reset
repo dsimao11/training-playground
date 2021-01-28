@@ -8,12 +8,11 @@ pipeline {
     stages {
         stage('build') {
         steps {
-            sh "ls -lta"
-            sh "git clean -fd"
-            sh "ls -lta"
-            sh "date > date.txt"
-            sh "ls -lta"
-
+                sh "ls -lta"
+                sh "git clean -fd"
+                sh "ls -lta"
+                sh "date > date.txt"
+                sh "ls -lta"
             }
         }
     }

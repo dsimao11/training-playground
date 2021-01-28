@@ -1,14 +1,15 @@
 pipeline {
-    agent { 
-		docker { 
-			image 'alpine:latest' 
+	agent { 
+		dockerfile {
+			dir '003 - Defining Execution Environments'
+			filename '04 - Dockerfile - Multiple Agents using Dockerfile'
 		}
 	}
-    stages {
-        stage('build') {
-            steps {
-                sh ""
-            }
-        }
-    }
+	stages {
+		stage('build') {
+			steps {
+				sh ""
+			}
+		}
+	}
 }

@@ -1,19 +1,19 @@
 pipeline {
     agent { 
-        dockerfile { 
-             	filename '03 - Dockerfile- Git Reset'
-       		dir '006 - Cleaning Up and Notifications' 
+    dockerfile { 
+        filename '03 - Dockerfile- Git Reset'
+        dir '006 - Cleaning Up and Notifications' 
         }
     }
     stages {
         stage('build') {
-            steps {
+        steps {
             sh "ls -lta"
-        sh "git clean -fd"
-        sh "ls -lta"
-                sh "date > date.txt"
-        sh "ls -lta"
-        
+            sh "git clean -fd"
+            sh "ls -lta"
+            sh "date > date.txt"
+            sh "ls -lta"
+
             }
         }
     }
